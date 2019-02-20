@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BufferOverflowException.cs" />
+    <Compile Include="BufferUnderflowException.cs" />
+    <Compile Include="CircularBuffer.cs" />
     <Compile Include="ICircularBuffer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

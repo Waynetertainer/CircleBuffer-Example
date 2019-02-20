@@ -8,19 +8,19 @@ using System.Threading.Tasks;
 
 namespace CircularBuffer
 {
-    interface ICircularBuffer
+    interface ICircularBuffer<T> : IEnumerable
     {
-        int Capacity { get; set; }
-        int Count { get; set; }
-        bool IsEmpty { get; set; }
-        bool IsFull { get; set; }
+        int Capacity { get; }
+        int Count { get;  }
+        bool IsEmpty { get;  }
+        bool IsFull { get;  }
 
-        void Produce(IEnumerable T);
-        IEnumerable Consume();
+        void Produce(T element);
+        T Consume();
         void Clear();
-        int ProduceAll(IEnumerable T);
-        void ClearAll();
-        void WaitProduce(IEnumerable T);
-        IEnumerable WaitConsume();
+        int ProduceAll(IEnumerable<T> elements);
+        void ConsumeAll();
+        void WaitProduce(IEnumerable<T> elements);
+        T WaitConsume();
     }
 }
